@@ -14,6 +14,10 @@ Nessa aventura acompanhamos um garoto que, ao estudar numa peculiar escola em Fo
 
 ---
 
+# 🕹 
+[Baixar o jogo no Google Drive](https://drive.google.com/file/d/1WkrhomvsBCRVmwBFIjKgdqJVqFgOVUH_/view?usp=drive_link)
+
+
 ## 👨‍💻 Desenvolvedores
 
 - [José Maia](https://github.com/JoseMaia07)
