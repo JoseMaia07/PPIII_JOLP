@@ -1,0 +1,345 @@
+[gd_scene load_steps=26 format=3 uid="uid://clp7ki06yvm2d"]
+
+[ext_resource type="Texture2D" uid="uid://b7dm046qv4uao" path="res://assets/world_sprites/scenario/combat_background_sprites/floresta-battle-bg1.png" id="1_j2i77"]
+[ext_resource type="Script" path="res://scripts/BattleScene1.cs" id="1_ymu42"]
+[ext_resource type="Texture2D" uid="uid://di6icgr33udnl" path="res://assets/gui/notepad-1-removebg-preview.png" id="2_dd4qy"]
+[ext_resource type="FontFile" uid="uid://dsm4pfbss2gyj" path="res://assets/gui/Standing Persona.otf" id="3_itjp3"]
+[ext_resource type="Theme" uid="uid://c7wpcd5nuwb1w" path="res://scenes/battle_scene_1_btns.tres" id="3_j1fk0"]
+[ext_resource type="Texture2D" uid="uid://dc0ha7vrcuu4r" path="res://assets/world_sprites/pixil-frame-0 (5).png" id="4_o74us"]
+[ext_resource type="Theme" uid="uid://dasxgcnsthomf" path="res://scenes/skills_btns.tres" id="5_dcv0c"]
+[ext_resource type="Texture2D" uid="uid://swv83x5xy3ja" path="res://assets/gui/bar_under-2.png" id="6_t5uw7"]
+[ext_resource type="Texture2D" uid="uid://3886vttgiblo" path="res://assets/gui/progress_mp-2.png" id="7_qvppq"]
+[ext_resource type="Texture2D" uid="uid://bee52spier6nx" path="res://assets/gui/progress_hp-2.png" id="8_at2be"]
+[ext_resource type="PackedScene" uid="uid://bl8oy22tt32lq" path="res://scenes/charas/p_devil.tscn" id="10_s23db"]
+[ext_resource type="AudioStream" uid="uid://dr0av2dudhujm" path="res://assets/soundtrack/menus/757891__evanboyerman__mysterioussuspenseful-background-drama-music-with-acoustic-guitar.wav" id="12_h4o4t"]
+[ext_resource type="AudioStream" uid="uid://bla7wp83ifhct" path="res://assets/soundtrack/629020__kolombooo__button-click - Copia.ogg" id="13_cyr44"]
+
+[sub_resource type="Theme" id="Theme_o5ee6"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 32
+RichTextLabel/fonts/normal_font = ExtResource("3_itjp3")
+
+[sub_resource type="Theme" id="Theme_h4mm6"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 40
+RichTextLabel/fonts/normal_font = ExtResource("3_itjp3")
+
+[sub_resource type="Theme" id="Theme_tytq4"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+RichTextLabel/font_sizes/normal_font_size = 30
+RichTextLabel/fonts/normal_font = ExtResource("3_itjp3")
+
+[sub_resource type="Theme" id="Theme_p2ryw"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_5sr6w"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_anc56"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_xhnqk"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_jdujq"]
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/font_sizes/normal_font_size = 32
+
+[sub_resource type="Theme" id="Theme_22ymc"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_ee8ui"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_rfy6k"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_q07vx"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[node name="battle_scene1" type="Node2D"]
+script = ExtResource("1_ymu42")
+
+[node name="bg" type="TextureRect" parent="."]
+texture_filter = 1
+offset_right = 1200.0
+offset_bottom = 801.0
+texture = ExtResource("1_j2i77")
+metadata/_edit_lock_ = true
+
+[node name="menu" type="CanvasLayer" parent="."]
+
+[node name="bg_combat_menu" type="TextureRect" parent="menu"]
+offset_left = 11.0
+offset_top = 286.0
+offset_right = 379.0
+offset_bottom = 790.0
+texture = ExtResource("2_dd4qy")
+metadata/_edit_lock_ = true
+
+[node name="combat_menu" type="VBoxContainer" parent="menu"]
+offset_left = 40.0
+offset_top = 621.0
+offset_right = 345.0
+offset_bottom = 749.0
+theme_override_constants/separation = 20
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="menu/combat_menu"]
+layout_mode = 2
+theme_override_constants/separation = 130
+alignment = 1
+
+[node name="attack_btn" type="Button" parent="menu/combat_menu/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("3_j1fk0")
+text = "Atacar"
+flat = true
+
+[node name="defense_btn" type="Button" parent="menu/combat_menu/HBoxContainer3"]
+layout_mode = 2
+theme = ExtResource("3_j1fk0")
+text = "Defender
+"
+flat = true
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="menu/combat_menu"]
+layout_mode = 2
+theme_override_constants/separation = 100
+alignment = 1
+
+[node name="skills_btn" type="Button" parent="menu/combat_menu/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_j1fk0")
+text = "Habilidades"
+flat = true
+
+[node name="bag_btn" type="Button" parent="menu/combat_menu/HBoxContainer2"]
+layout_mode = 2
+theme = ExtResource("3_j1fk0")
+text = "Mochila"
+flat = true
+
+[node name="bg_skills_menu" type="TextureRect" parent="menu"]
+visible = false
+offset_left = -51.0
+offset_top = 577.0
+offset_right = 441.0
+offset_bottom = 772.0
+texture = ExtResource("4_o74us")
+metadata/_edit_lock_ = true
+
+[node name="skills_menu" type="VBoxContainer" parent="menu"]
+visible = false
+offset_left = 46.0
+offset_top = 611.0
+offset_right = 346.0
+offset_bottom = 731.0
+metadata/_edit_lock_ = true
+
+[node name="VBoxContainer" type="VBoxContainer" parent="menu/skills_menu"]
+layout_mode = 2
+theme_override_constants/separation = 10
+
+[node name="skill1_btn" type="Button" parent="menu/skills_menu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_dcv0c")
+text = "Soco Carregado"
+flat = true
+
+[node name="skill2_btn" type="Button" parent="menu/skills_menu/VBoxContainer"]
+layout_mode = 2
+theme = ExtResource("5_dcv0c")
+text = "Caneta!
+"
+flat = true
+
+[node name="back_skills_btn" type="Button" parent="menu"]
+visible = false
+offset_left = 282.0
+offset_top = 720.0
+offset_right = 337.0
+offset_bottom = 751.0
+theme = ExtResource("5_dcv0c")
+text = "Voltar"
+flat = true
+
+[node name="player_mpbar" type="TextureProgressBar" parent="menu"]
+offset_left = 67.0
+offset_top = 406.0
+offset_right = 323.0
+offset_bottom = 446.0
+value = 100.0
+texture_under = ExtResource("6_t5uw7")
+texture_progress = ExtResource("7_qvppq")
+
+[node name="player_hpbar" type="TextureProgressBar" parent="menu"]
+offset_left = 66.0
+offset_top = 363.0
+offset_right = 322.0
+offset_bottom = 403.0
+value = 100.0
+texture_under = ExtResource("6_t5uw7")
+texture_progress = ExtResource("8_at2be")
+
+[node name="oquefarei" type="RichTextLabel" parent="menu"]
+offset_left = 25.0
+offset_top = 556.0
+offset_right = 260.0
+offset_bottom = 599.0
+theme = SubResource("Theme_o5ee6")
+text = "O que farei?"
+scroll_active = false
+
+[node name="eu" type="RichTextLabel" parent="menu"]
+offset_left = 25.0
+offset_top = 368.0
+offset_right = 260.0
+offset_bottom = 411.0
+theme = SubResource("Theme_o5ee6")
+text = "Eu
+"
+scroll_active = false
+
+[node name="situacao" type="RichTextLabel" parent="menu"]
+offset_left = 25.0
+offset_top = 324.0
+offset_right = 260.0
+offset_bottom = 367.0
+theme = SubResource("Theme_h4mm6")
+text = "Situação"
+scroll_active = false
+
+[node name="combat_log" type="RichTextLabel" parent="menu"]
+offset_left = 34.0
+offset_top = 445.0
+offset_right = 346.0
+offset_bottom = 554.0
+theme = SubResource("Theme_tytq4")
+scroll_following = true
+
+[node name="vida_player" type="RichTextLabel" parent="menu"]
+offset_left = 76.0
+offset_top = 367.0
+offset_right = 116.0
+offset_bottom = 407.0
+theme = SubResource("Theme_p2ryw")
+text = "Vida"
+scroll_active = false
+
+[node name="hp_player" type="RichTextLabel" parent="menu"]
+offset_left = 187.0
+offset_top = 367.0
+offset_right = 317.0
+offset_bottom = 390.0
+theme = SubResource("Theme_5sr6w")
+text = "100"
+scroll_active = false
+
+[node name="mp_player" type="RichTextLabel" parent="menu"]
+offset_left = 187.0
+offset_top = 410.0
+offset_right = 318.0
+offset_bottom = 434.0
+theme = SubResource("Theme_anc56")
+text = "100"
+scroll_active = false
+
+[node name="mana_player" type="RichTextLabel" parent="menu"]
+offset_left = 76.0
+offset_top = 409.0
+offset_right = 139.0
+offset_bottom = 449.0
+theme = SubResource("Theme_xhnqk")
+text = "Mana"
+scroll_active = false
+
+[node name="name_enemy" type="RichTextLabel" parent="menu"]
+offset_left = 714.0
+offset_top = 87.0
+offset_right = 863.0
+offset_bottom = 127.0
+theme = SubResource("Theme_jdujq")
+text = "Diabrete"
+scroll_active = false
+
+[node name="enemy_hpbar" type="TextureProgressBar" parent="menu"]
+offset_left = 656.0
+offset_top = 141.0
+offset_right = 912.0
+offset_bottom = 181.0
+max_value = 120.0
+value = 120.0
+texture_under = ExtResource("6_t5uw7")
+texture_progress = ExtResource("8_at2be")
+metadata/_edit_lock_ = true
+
+[node name="hp_enemy" type="RichTextLabel" parent="menu"]
+offset_left = 769.0
+offset_top = 146.0
+offset_right = 905.0
+offset_bottom = 169.0
+theme = SubResource("Theme_22ymc")
+text = "120"
+scroll_active = false
+
+[node name="vida_enemy" type="RichTextLabel" parent="menu"]
+offset_left = 664.0
+offset_top = 145.0
+offset_right = 704.0
+offset_bottom = 185.0
+theme = SubResource("Theme_ee8ui")
+text = "Vida"
+scroll_active = false
+metadata/_edit_lock_ = true
+
+[node name="enemy_mpbar" type="TextureProgressBar" parent="menu"]
+offset_left = 656.0
+offset_top = 182.0
+offset_right = 912.0
+offset_bottom = 222.0
+value = 100.0
+texture_under = ExtResource("6_t5uw7")
+texture_progress = ExtResource("7_qvppq")
+metadata/_edit_lock_ = true
+
+[node name="mp_enemy" type="RichTextLabel" parent="menu"]
+offset_left = 776.0
+offset_top = 186.0
+offset_right = 906.0
+offset_bottom = 209.0
+theme = SubResource("Theme_rfy6k")
+text = "60"
+scroll_active = false
+
+[node name="mana_enemy" type="RichTextLabel" parent="menu"]
+offset_left = 663.0
+offset_top = 185.0
+offset_right = 720.0
+offset_bottom = 225.0
+theme = SubResource("Theme_q07vx")
+text = "Mana"
+scroll_active = false
+metadata/_edit_lock_ = true
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.988235, 1, 0.454902, 1)
+
+[node name="p_devil" parent="." instance=ExtResource("10_s23db")]
+position = Vector2(784, 477)
+scale = Vector2(6, 6)
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("12_h4o4t")
+volume_db = -3.962
+autoplay = true
+
+[node name="button_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("13_cyr44")
+volume_db = 12.0
+
+[connection signal="pressed" from="menu/combat_menu/HBoxContainer3/attack_btn" to="." method="OnAttackButtonPressed"]
+[connection signal="pressed" from="menu/combat_menu/HBoxContainer3/defense_btn" to="." method="OnDefenseButtonPressed"]
+[connection signal="pressed" from="menu/combat_menu/HBoxContainer2/skills_btn" to="." method="OnSkillsButtonPressed"]
+[connection signal="pressed" from="menu/skills_menu/VBoxContainer/skill1_btn" to="." method="OnSkill1ButtonPressed"]
+[connection signal="pressed" from="menu/skills_menu/VBoxContainer/skill2_btn" to="." method="OnSkill2ButtonPressed"]
+[connection signal="pressed" from="menu/back_skills_btn" to="." method="OnBackSkillButtonPressed"]

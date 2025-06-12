@@ -1,0 +1,19 @@
+[remap]
+
+importer="oggvorbisstr"
+type="AudioStreamOggVorbis"
+uid="uid://bla7wp83ifhct"
+path="res://.godot/imported/629020__kolombooo__button-click - Copia.ogg-bc844c79c6ffa9bad23ed0c263f84422.oggvorbisstr"
+
+[deps]
+
+source_file="res://assets/soundtrack/629020__kolombooo__button-click - Copia.ogg"
+dest_files=["res://.godot/imported/629020__kolombooo__button-click - Copia.ogg-bc844c79c6ffa9bad23ed0c263f84422.oggvorbisstr"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

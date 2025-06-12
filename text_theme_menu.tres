@@ -1,0 +1,8 @@
+[gd_resource type="Theme" load_steps=2 format=3 uid="uid://ctc1s4mbvfrx0"]
+
+[ext_resource type="FontFile" uid="uid://cgebkfbyiq1wb" path="res://scenes/skrigex-gothic-demo-version.regular.ttf" id="1_emjph"]
+
+[resource]
+RichTextLabel/font_sizes/bold_font_size = 40
+RichTextLabel/font_sizes/normal_font_size = 46
+RichTextLabel/fonts/normal_font = ExtResource("1_emjph")

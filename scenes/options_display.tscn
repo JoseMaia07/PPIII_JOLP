@@ -1,0 +1,50 @@
+[gd_scene load_steps=3 format=3 uid="uid://c678cxx73hq2t"]
+
+[ext_resource type="Script" path="res://scripts/OptionsDisplay.cs" id="1_3d6yp"]
+[ext_resource type="AudioStream" uid="uid://bla7wp83ifhct" path="res://assets/soundtrack/629020__kolombooo__button-click - Copia.ogg" id="2_8wqlm"]
+
+[node name="options_display" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_3d6yp")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 2
+offset_left = 40.0
+offset_top = 67.0
+offset_right = 154.0
+offset_bottom = 95.0
+text = "Modo de Tela
+"
+
+[node name="VSeparator" type="VSeparator" parent="."]
+layout_mode = 0
+offset_left = 161.0
+offset_top = 59.0
+offset_right = 165.0
+offset_bottom = 99.0
+
+[node name="window_mode_button" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 184.0
+offset_top = 68.0
+offset_right = 297.0
+offset_bottom = 88.0
+
+[node name="resolution_button" type="OptionButton" parent="."]
+layout_mode = 0
+offset_left = 185.0
+offset_top = 105.0
+offset_right = 298.0
+offset_bottom = 125.0
+
+[node name="button_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_8wqlm")
+volume_db = 16.0
+
+[connection signal="item_selected" from="window_mode_button" to="window_mode_button" method="_on_window_mode_button_item_selected"]
+[connection signal="item_selected" from="resolution_button" to="." method="_on_resolution_button_item_selected"]

@@ -1,0 +1,183 @@
+[gd_scene load_steps=16 format=3 uid="uid://dy70fpm12anib"]
+
+[ext_resource type="Texture2D" uid="uid://dc0ha7vrcuu4r" path="res://assets/world_sprites/pixil-frame-0 (5).png" id="1_be7fe"]
+[ext_resource type="FontFile" uid="uid://cgebkfbyiq1wb" path="res://scenes/skrigex-gothic-demo-version.regular.ttf" id="2_7he06"]
+[ext_resource type="Theme" uid="uid://6ladyx8cifdr" path="res://btn_main_menu.tres" id="3_ldo1q"]
+[ext_resource type="Script" path="res://scripts/options.cs" id="4_g8p4e"]
+[ext_resource type="PackedScene" uid="uid://c678cxx73hq2t" path="res://scenes/options_display.tscn" id="5_iu6ir"]
+[ext_resource type="AudioStream" uid="uid://bla7wp83ifhct" path="res://assets/soundtrack/629020__kolombooo__button-click - Copia.ogg" id="5_uxb3u"]
+
+[sub_resource type="Theme" id="Theme_4qm7b"]
+RichTextLabel/font_sizes/normal_font_size = 40
+RichTextLabel/fonts/normal_font = ExtResource("2_7he06")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vncw3"]
+bg_color = Color(6.31475e-05, 0, 0.142595, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_rr2yy"]
+bg_color = Color(6.31475e-05, 0, 0.142595, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_qch1q"]
+bg_color = Color(3.30899e-08, 0, 0.0774627, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jqcc1"]
+bg_color = Color(0, 0.0138787, 0.198749, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vnx6i"]
+bg_color = Color(5.22309e-05, 6.01634e-09, 0.127582, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_lhbpr"]
+bg_color = Color(6.31475e-05, 0, 0.142595, 1)
+
+[sub_resource type="Theme" id="Theme_qxql4"]
+TabContainer/styles/panel = SubResource("StyleBoxFlat_vncw3")
+TabContainer/styles/tab_disabled = SubResource("StyleBoxFlat_rr2yy")
+TabContainer/styles/tab_focus = SubResource("StyleBoxFlat_qch1q")
+TabContainer/styles/tab_hovered = SubResource("StyleBoxFlat_jqcc1")
+TabContainer/styles/tab_selected = SubResource("StyleBoxFlat_vnx6i")
+TabContainer/styles/tab_unselected = SubResource("StyleBoxFlat_lhbpr")
+
+[sub_resource type="Theme" id="Theme_pncv4"]
+
+[node name="options" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("4_g8p4e")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -86.0
+offset_top = -6.0
+offset_right = 1114.0
+offset_bottom = 794.0
+texture = ExtResource("1_be7fe")
+metadata/_edit_lock_ = true
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 453.0
+offset_top = 89.0
+offset_right = 581.0
+offset_bottom = 123.0
+theme = SubResource("Theme_4qm7b")
+text = "Opções"
+scroll_active = false
+
+[node name="quit_options_btn" type="Button" parent="."]
+layout_mode = 0
+offset_left = 698.0
+offset_top = 650.0
+offset_right = 866.0
+offset_bottom = 698.0
+theme = ExtResource("3_ldo1q")
+text = "Pronto"
+
+[node name="TabContainer" type="TabContainer" parent="."]
+layout_mode = 0
+offset_left = 159.0
+offset_top = 141.0
+offset_right = 872.0
+offset_bottom = 627.0
+mouse_filter = 0
+theme = SubResource("Theme_qxql4")
+tab_alignment = 1
+current_tab = 0
+
+[node name="Gráficos----" type="TabBar" parent="TabContainer"]
+layout_mode = 2
+theme = SubResource("Theme_pncv4")
+metadata/_tab_index = 0
+
+[node name="options_display" parent="TabContainer/Gráficos----" instance=ExtResource("5_iu6ir")]
+layout_mode = 1
+
+[node name="Som----" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 1
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Som----"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 735.0
+offset_bottom = 398.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Som----/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Som----/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Master"
+
+[node name="Label2" type="Label" parent="TabContainer/Som----/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "SFX"
+
+[node name="Label3" type="Label" parent="TabContainer/Som----/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Música
+"
+
+[node name="Jogabilidade----" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 2
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Jogabilidade----"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 735.0
+offset_bottom = 398.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Jogabilidade----/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Jogabilidade----/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Controles"
+
+[node name="Linguagem" type="TabBar" parent="TabContainer"]
+visible = false
+layout_mode = 2
+metadata/_tab_index = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="TabContainer/Linguagem"]
+layout_mode = 0
+offset_left = 20.0
+offset_top = 19.0
+offset_right = 735.0
+offset_bottom = 398.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Linguagem/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 64
+alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Linguagem/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Português Brasileiro"
+
+[node name="Label2" type="Label" parent="TabContainer/Linguagem/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "English in development"
+
+[node name="Label3" type="Label" parent="TabContainer/Linguagem/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "Español En desarrollo
+"
+
+[node name="button_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_uxb3u")
+volume_db = 16.0
+
+[connection signal="pressed" from="quit_options_btn" to="." method="_on_quit_options_btn_pressed"]

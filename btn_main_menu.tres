@@ -1,0 +1,20 @@
+[gd_resource type="Theme" load_steps=5 format=3 uid="uid://6ladyx8cifdr"]
+
+[ext_resource type="FontFile" uid="uid://cgebkfbyiq1wb" path="res://scenes/skrigex-gothic-demo-version.regular.ttf" id="1_71pci"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_efecf"]
+bg_color = Color(0.301961, 0.294118, 0.27451, 0.643137)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kp4nm"]
+bg_color = Color(0.111261, 0.112099, 0.104517, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3ppmt"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[resource]
+Button/constants/align_to_largest_stylebox = 2
+Button/font_sizes/font_size = 40
+Button/fonts/font = ExtResource("1_71pci")
+Button/styles/focus = SubResource("StyleBoxFlat_efecf")
+Button/styles/hover = SubResource("StyleBoxFlat_kp4nm")
+Button/styles/normal = SubResource("StyleBoxFlat_3ppmt")

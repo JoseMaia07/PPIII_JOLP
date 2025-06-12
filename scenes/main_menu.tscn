@@ -1,0 +1,457 @@
+[gd_scene load_steps=22 format=3 uid="uid://5rnmwbt5wava"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.cs" id="1_s8fdw"]
+[ext_resource type="Texture2D" uid="uid://dn3kjs3db84jo" path="res://assets/world_sprites/pixil-frame-0 (1).png" id="2_4kkdk"]
+[ext_resource type="Theme" uid="uid://xukn6yrn2fc6" path="res://text_theme_menu_v.tres" id="3_8mp1r"]
+[ext_resource type="Texture2D" uid="uid://fx3mhl842jdf" path="res://assets/special_effects/light/light.png" id="3_d0g4l"]
+[ext_resource type="Theme" uid="uid://6ladyx8cifdr" path="res://btn_main_menu.tres" id="3_mihsx"]
+[ext_resource type="Theme" uid="uid://ctc1s4mbvfrx0" path="res://text_theme_menu.tres" id="4_u0w8f"]
+[ext_resource type="AudioStream" uid="uid://stja0upsgnka" path="res://assets/soundtrack/menus/747941__viramiller__intense-music-for-suspenseful-scenes.mp3" id="6_w20v8"]
+[ext_resource type="AudioStream" uid="uid://cd4bh3m4rav8y" path="res://assets/soundtrack/menus/43344__inchadney__rain.mp3" id="7_guq6l"]
+[ext_resource type="PackedScene" uid="uid://d1hwc0r704q" path="res://scenes/credits.tscn" id="9_1xnc6"]
+[ext_resource type="AudioStream" uid="uid://bla7wp83ifhct" path="res://assets/soundtrack/629020__kolombooo__button-click - Copia.ogg" id="10_dgvre"]
+[ext_resource type="PackedScene" uid="uid://dy70fpm12anib" path="res://scenes/options.tscn" id="11_i83qa"]
+[ext_resource type="Texture2D" uid="uid://c00q2jmjcblju" path="res://assets/gui/Rectangle 5.png" id="12_mbbn4"]
+[ext_resource type="Texture2D" uid="uid://dlbxr54k8qvvp" path="res://assets/special_effects/logo-jolp.png" id="13_cdvhb"]
+[ext_resource type="PackedScene" uid="uid://cidtlgo27mosk" path="res://scenes/save_system.tscn" id="14_cliyc"]
+[ext_resource type="PackedScene" uid="uid://cb000ituuxpll" path="res://scenes/pause_menu.tscn" id="15_qf24g"]
+
+[sub_resource type="Animation" id="Animation_3qwoa"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fundo-intro:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_mbbn4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("13_cdvhb")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fundo-intro:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("fundo-intro:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_u670d"]
+resource_name = "intro-jolp"
+length = 7.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fundo-intro:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [ExtResource("12_mbbn4"), ExtResource("12_mbbn4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:texture")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(1, 2, 3, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 1,
+"values": [ExtResource("13_cdvhb"), ExtResource("13_cdvhb"), ExtResource("13_cdvhb"), ExtResource("13_cdvhb")]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Sprite2D:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(1, 4, 6.16667),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [true, true, false]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("fundo-intro:modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 3, 5.03333, 7),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Sprite2D:modulate")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(1, 2.03333, 4, 6),
+"transitions": PackedFloat32Array(1, 1, 1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1), Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("fundo-intro:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 6.63333),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [true, false]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_it5eq"]
+_data = {
+"RESET": SubResource("Animation_3qwoa"),
+"intro-jolp": SubResource("Animation_u670d")
+}
+
+[sub_resource type="Animation" id="Animation_2qqhy"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fundo-intro:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_mbbn4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fundo-intro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 0)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fundo-intro:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="Animation" id="Animation_1073v"]
+resource_name = "transition"
+length = 5.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("fundo-intro:texture")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [ExtResource("12_mbbn4")]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("fundo-intro:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 0), Color(1, 1, 1, 1)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("fundo-intro:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_04tqs"]
+_data = {
+"RESET": SubResource("Animation_2qqhy"),
+"transition": SubResource("Animation_1073v")
+}
+
+[node name="main_menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_s8fdw")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -75.0
+offset_right = 1203.0
+offset_bottom = 802.0
+texture = ExtResource("2_4kkdk")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
+modulate = Color(0.933326, 4.81308e-06, 9.62615e-07, 1)
+position = Vector2(1059, 456)
+scale = Vector2(0.0726927, 0.0731201)
+texture = ExtResource("3_d0g4l")
+
+[node name="Sprite2D" type="Sprite2D" parent="TextureRect/Sprite2D"]
+modulate = Color(0.933326, 4.81308e-06, 9.62615e-07, 1)
+position = Vector2(-2338.61, 0.000349045)
+scale = Vector2(1.03941, 0.948421)
+texture = ExtResource("3_d0g4l")
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 16.0
+offset_top = 759.0
+offset_right = 162.0
+offset_bottom = 818.0
+theme = ExtResource("3_8mp1r")
+text = "Alpha 0.3"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 186.0
+offset_top = 188.0
+offset_right = 337.0
+offset_bottom = 247.0
+theme = ExtResource("4_u0w8f")
+text = "First Day"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 23.0
+offset_top = 139.0
+offset_right = 514.0
+offset_bottom = 198.0
+theme = ExtResource("4_u0w8f")
+text = "The Cult Of The White Wings"
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -348.0
+offset_top = -475.0
+offset_right = -348.0
+offset_bottom = -187.0
+grow_horizontal = 2
+grow_vertical = 0
+metadata/_edit_lock_ = true
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 0
+
+[node name="new_game_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_next = NodePath("../load_game_btn")
+focus_previous = NodePath("../quit_game_btn")
+theme = ExtResource("3_mihsx")
+text = "Novo Jogo 
+"
+
+[node name="HSeparator5" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="load_game_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_next = NodePath("../options_btn")
+focus_previous = NodePath("../new_game_btn")
+theme = ExtResource("3_mihsx")
+text = "Carregar Jogo"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="options_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_next = NodePath("../credits_btn")
+focus_previous = NodePath("../load_game_btn")
+theme = ExtResource("3_mihsx")
+text = "Opções"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="credits_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_next = NodePath("../quit_game_btn")
+focus_previous = NodePath("../options_btn")
+theme = ExtResource("3_mihsx")
+text = "Créditos"
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="quit_game_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+focus_next = NodePath("../new_game_btn")
+focus_previous = NodePath("../credits_btn")
+theme = ExtResource("3_mihsx")
+text = "Sair"
+
+[node name="music_audio_stream2d2" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("6_w20v8")
+volume_db = 10.0
+autoplay = true
+parameters/looping = true
+
+[node name="rain_audio_stream2d" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_guq6l")
+volume_db = 14.0
+autoplay = true
+parameters/looping = true
+
+[node name="credits" parent="." instance=ExtResource("9_1xnc6")]
+visible = false
+layout_mode = 1
+
+[node name="button_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_dgvre")
+volume_db = 16.0
+
+[node name="options" parent="." instance=ExtResource("11_i83qa")]
+visible = false
+layout_mode = 1
+
+[node name="fundo-intro" type="TextureRect" parent="."]
+modulate = Color(1, 1, 1, 0)
+layout_mode = 0
+offset_left = 2.0
+offset_right = 1202.0
+offset_bottom = 804.0
+texture = ExtResource("12_mbbn4")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(594, 323)
+texture = ExtResource("13_cdvhb")
+
+[node name="intro-jolp" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_it5eq")
+}
+autoplay = "intro-jolp"
+movie_quit_on_finish = true
+
+[node name="save_system" parent="." instance=ExtResource("14_cliyc")]
+
+[node name="pause_menu" parent="." instance=ExtResource("15_qf24g")]
+process_mode = 4
+layout_mode = 1
+
+[node name="transition" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_04tqs")
+}
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/new_game_btn" to="." method="_on_new_game_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/load_game_btn" to="." method="_on_load_game_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/options_btn" to="." method="_on_options_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/credits_btn" to="." method="_on_credits_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_game_btn" to="." method="_on_quit_game_btn_pressed"]
+[connection signal="animation_finished" from="transition" to="." method="OnTransitionFinished"]

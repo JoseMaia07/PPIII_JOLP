@@ -1,0 +1,124 @@
+[gd_scene load_steps=9 format=3 uid="uid://cb000ituuxpll"]
+
+[ext_resource type="Texture2D" uid="uid://gbrjfwlbs7vn" path="res://assets/special_effects/Rectangle 3-1.png" id="1_cgdlx"]
+[ext_resource type="Script" path="res://scripts/PauseMenu.cs" id="1_g2omw"]
+[ext_resource type="Texture2D" uid="uid://dc0ha7vrcuu4r" path="res://assets/world_sprites/pixil-frame-0 (5).png" id="1_x7wvl"]
+[ext_resource type="FontFile" uid="uid://cgebkfbyiq1wb" path="res://scenes/skrigex-gothic-demo-version.regular.ttf" id="2_802a1"]
+[ext_resource type="Theme" uid="uid://crdbo7iqq66ch" path="res://scripts/pause_menu.tres" id="4_mccrp"]
+[ext_resource type="AudioStream" uid="uid://bla7wp83ifhct" path="res://assets/soundtrack/629020__kolombooo__button-click - Copia.ogg" id="5_u5sgy"]
+[ext_resource type="PackedScene" uid="uid://dy70fpm12anib" path="res://scenes/options.tscn" id="7_4o0t0"]
+
+[sub_resource type="Theme" id="Theme_nr1i7"]
+RichTextLabel/font_sizes/normal_font_size = 64
+RichTextLabel/fonts/normal_font = ExtResource("2_802a1")
+
+[node name="pause_menu" type="Control"]
+process_mode = 3
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_g2omw")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+self_modulate = Color(0, 0, 1, 1)
+layout_mode = 0
+offset_right = 1200.0
+offset_bottom = 800.0
+texture = ExtResource("1_cgdlx")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = -22.0
+offset_top = -6.0
+offset_right = 1178.0
+offset_bottom = 794.0
+texture = ExtResource("1_x7wvl")
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 0
+offset_left = 422.0
+offset_top = 93.0
+offset_right = 778.0
+offset_bottom = 164.0
+theme = SubResource("Theme_nr1i7")
+text = "Jogo Pausado"
+scroll_active = false
+
+[node name="HSeparator" type="HSeparator" parent="."]
+layout_mode = 0
+offset_left = 298.0
+offset_top = 128.0
+offset_right = 900.0
+offset_bottom = 195.0
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 0
+offset_left = 419.0
+offset_top = 208.0
+offset_right = 755.0
+offset_bottom = 568.0
+
+[node name="HBoxContainer" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+
+[node name="return_game_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+focus_next = NodePath("../options_pm_btn")
+focus_previous = NodePath("../quit_game_pm_btn")
+theme = ExtResource("4_mccrp")
+text = "Retornar ao Jogo"
+
+[node name="HSeparator2" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="options_pm_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+focus_next = NodePath("../main_menu_btn")
+focus_previous = NodePath("../return_game_btn")
+theme = ExtResource("4_mccrp")
+text = "Opções"
+
+[node name="HSeparator3" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="main_menu_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+focus_next = NodePath("../quit_game_pm_btn")
+focus_previous = NodePath("../options_pm_btn")
+theme = ExtResource("4_mccrp")
+text = "Menu Principal"
+
+[node name="HSeparator4" type="HSeparator" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="quit_game_pm_btn" type="Button" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+focus_next = NodePath("../return_game_btn")
+focus_previous = NodePath("../main_menu_btn")
+theme = ExtResource("4_mccrp")
+text = "Sair do Jogo"
+
+[node name="button_sound" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_u5sgy")
+volume_db = 16.0
+
+[node name="options" parent="." instance=ExtResource("7_4o0t0")]
+visible = false
+layout_mode = 1
+offset_left = 62.0
+offset_top = 2.0
+offset_right = 66.0
+offset_bottom = 5.0
+
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/return_game_btn" to="." method="_on_return_game_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/options_pm_btn" to="." method="_on_options_pm_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/main_menu_btn" to="." method="_on_main_menu_btn_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxContainer/VBoxContainer/quit_game_pm_btn" to="." method="_on_quit_game_pm_btn_pressed"]

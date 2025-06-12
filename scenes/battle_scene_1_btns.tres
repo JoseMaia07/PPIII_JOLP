@@ -1,0 +1,16 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://c7wpcd5nuwb1w"]
+
+[ext_resource type="FontFile" uid="uid://dsm4pfbss2gyj" path="res://assets/gui/Standing Persona.otf" id="1_unocw"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_vt5os"]
+bg_color = Color(0, 0, 0, 0.388235)
+
+[resource]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(1, 0, 0, 1)
+Button/colors/font_hover_color = Color(1, 0, 0, 1)
+Button/colors/font_hover_pressed_color = Color(0.305882, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0.305882, 0, 0, 1)
+Button/font_sizes/font_size = 36
+Button/fonts/font = ExtResource("1_unocw")
+Button/styles/hover = SubResource("StyleBoxFlat_vt5os")

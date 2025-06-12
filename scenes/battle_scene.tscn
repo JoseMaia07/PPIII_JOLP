@@ -1,0 +1,337 @@
+[gd_scene load_steps=21 format=3 uid="uid://dhrkfs37f8tcb"]
+
+[ext_resource type="Script" path="res://BattleScene.cs" id="1_sjg3j"]
+[ext_resource type="Texture2D" uid="uid://b7dm046qv4uao" path="res://assets/world_sprites/scenario/combat_background_sprites/floresta-battle-bg1.png" id="2_mpgpx"]
+[ext_resource type="Texture2D" uid="uid://di6icgr33udnl" path="res://assets/gui/notepad-1-removebg-preview.png" id="4_43ee0"]
+[ext_resource type="Theme" uid="uid://fki8bx8xp3pg" path="res://btn_battle.tres" id="5_4mvkw"]
+[ext_resource type="Texture2D" uid="uid://swv83x5xy3ja" path="res://assets/gui/bar_under-2.png" id="6_gqm73"]
+[ext_resource type="Texture2D" uid="uid://bee52spier6nx" path="res://assets/gui/progress_hp-2.png" id="7_qjhjy"]
+[ext_resource type="Texture2D" uid="uid://3886vttgiblo" path="res://assets/gui/progress_mp-2.png" id="8_h1ftg"]
+[ext_resource type="Theme" uid="uid://csuxsj5c7edld" path="res://progressbar.tres" id="9_0ka8r"]
+[ext_resource type="PackedScene" uid="uid://bl8oy22tt32lq" path="res://scenes/charas/p_devil.tscn" id="9_uwlfw"]
+[ext_resource type="AudioStream" uid="uid://c7wb6dvinn5on" path="res://assets/soundtrack/battles/743699__mike_306__video-game-battle-music.wav" id="10_x3vcl"]
+[ext_resource type="PackedScene" uid="uid://cb000ituuxpll" path="res://scenes/pause_menu.tscn" id="11_6pndt"]
+
+[sub_resource type="Theme" id="Theme_oacan"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_sscrs"]
+RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
+
+[sub_resource type="Theme" id="Theme_1pcki"]
+
+[sub_resource type="Theme" id="Theme_noo5l"]
+RichTextLabel/colors/default_color = Color(1, 1, 1, 1)
+RichTextLabel/font_sizes/normal_font_size = 20
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kvb8k"]
+bg_color = Color(0, 0.63315, 0.966214, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jgoao"]
+bg_color = Color(2.11775e-06, 0.705004, 0.533228, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2n4a2"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_jvdae"]
+bg_color = Color(0.205461, 0.612832, 1, 1)
+
+[sub_resource type="Theme" id="Theme_q4wp4"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+MenuBar/colors/font_color = Color(0, 0, 0, 1)
+MenuBar/styles/hover = SubResource("StyleBoxFlat_kvb8k")
+MenuBar/styles/normal = SubResource("StyleBoxFlat_jgoao")
+MenuButton/styles/focus = SubResource("StyleBoxFlat_2n4a2")
+MenuButton/styles/hover = SubResource("StyleBoxFlat_jvdae")
+MenuButton/styles/normal = null
+
+[node name="BattleScene" type="Node2D"]
+script = ExtResource("1_sjg3j")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="bg" type="TextureRect" parent="Control"]
+layout_mode = 0
+offset_right = 1197.0
+offset_bottom = 804.0
+texture = ExtResource("2_mpgpx")
+expand_mode = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Control"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -17.0
+offset_top = 225.0
+offset_right = 372.0
+offset_bottom = 735.0
+grow_horizontal = 0
+grow_vertical = 0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+
+[node name="TextureRect" type="TextureRect" parent="Control/HBoxContainer"]
+layout_mode = 2
+texture = ExtResource("4_43ee0")
+expand_mode = 3
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control/HBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 13.0
+offset_top = 293.0
+offset_right = 254.0
+offset_bottom = 325.0
+theme = SubResource("Theme_oacan")
+text = "O que farei?"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control/HBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 12.0
+offset_top = 39.0
+offset_right = 253.0
+offset_bottom = 71.0
+theme = SubResource("Theme_oacan")
+text = "Situação"
+
+[node name="combatlog" type="RichTextLabel" parent="Control/HBoxContainer/TextureRect"]
+layout_mode = 0
+offset_left = 18.0
+offset_top = 142.0
+offset_right = 330.0
+offset_bottom = 284.0
+theme = SubResource("Theme_sscrs")
+scroll_following = true
+
+[node name="attack_btn" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 610.0
+offset_right = 108.0
+offset_bottom = 641.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("5_4mvkw")
+text = "Atacar"
+flat = true
+
+[node name="sattack1_btn" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 53.0
+offset_top = 695.0
+offset_right = 158.0
+offset_bottom = 726.0
+size_flags_horizontal = 0
+size_flags_vertical = 4
+theme = ExtResource("5_4mvkw")
+text = "Habilidades"
+flat = true
+
+[node name="sattack2_btn" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 196.0
+offset_top = 671.0
+offset_right = 301.0
+offset_bottom = 702.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("5_4mvkw")
+text = "Habilidade 2"
+flat = true
+
+[node name="defense_btn" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 174.0
+offset_top = 610.0
+offset_right = 255.0
+offset_bottom = 641.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("5_4mvkw")
+text = "Defender"
+flat = true
+
+[node name="bag_btn" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 49.0
+offset_top = 658.0
+offset_right = 118.0
+offset_bottom = 689.0
+size_flags_horizontal = 0
+size_flags_vertical = 8
+theme = ExtResource("5_4mvkw")
+text = "Mochila"
+flat = true
+
+[node name="PlayerHPBAR" type="TextureProgressBar" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 64.0
+offset_top = 332.0
+offset_right = 320.0
+offset_bottom = 364.0
+value = 100.0
+texture_under = ExtResource("6_gqm73")
+texture_progress = ExtResource("7_qjhjy")
+
+[node name="PlayerMPBAR" type="TextureProgressBar" parent="Control"]
+texture_filter = 1
+layout_mode = 0
+offset_left = 63.0
+offset_top = 375.0
+offset_right = 319.0
+offset_bottom = 407.0
+value = 100.0
+texture_under = ExtResource("6_gqm73")
+texture_progress = ExtResource("8_h1ftg")
+
+[node name="ProgressBar" type="ProgressBar" parent="Control"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 60.0
+offset_top = 242.0
+offset_right = 307.0
+offset_bottom = 269.0
+theme = ExtResource("9_0ka8r")
+value = 100.0
+
+[node name="ProgressBar2" type="ProgressBar" parent="Control"]
+visible = false
+texture_filter = 1
+layout_mode = 0
+offset_left = 65.0
+offset_top = 276.0
+offset_right = 312.0
+offset_bottom = 303.0
+theme = ExtResource("9_0ka8r")
+value = 100.0
+
+[node name="RichTextLabel3" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 172.0
+offset_top = 380.0
+offset_right = 207.0
+offset_bottom = 412.0
+theme = SubResource("Theme_oacan")
+text = "MP"
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 337.0
+offset_right = 208.0
+offset_bottom = 369.0
+theme = SubResource("Theme_oacan")
+text = "HP"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="Control"]
+layout_mode = 0
+offset_left = 37.0
+offset_top = 339.0
+offset_right = 72.0
+offset_bottom = 371.0
+theme = SubResource("Theme_oacan")
+text = "Eu"
+
+[node name="EnemyContainer" type="VBoxContainer" parent="Control"]
+layout_mode = 0
+offset_left = 505.0
+offset_top = 99.0
+offset_right = 797.0
+offset_bottom = 460.0
+
+[node name="EnemyHPBAR" type="TextureProgressBar" parent="Control/EnemyContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_1pcki")
+value = 100.0
+texture_under = ExtResource("6_gqm73")
+texture_progress = ExtResource("7_qjhjy")
+
+[node name="EnemyProgressBarHP" type="ProgressBar" parent="Control/EnemyContainer/EnemyHPBAR"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+offset_left = 8.0
+offset_top = 4.0
+offset_right = 250.0
+offset_bottom = 27.0
+size_flags_horizontal = 4
+theme = ExtResource("9_0ka8r")
+value = 100.0
+
+[node name="EnemyMPBAR" type="TextureProgressBar" parent="Control/EnemyContainer"]
+texture_filter = 1
+layout_mode = 2
+size_flags_horizontal = 4
+value = 100.0
+texture_under = ExtResource("6_gqm73")
+texture_progress = ExtResource("8_h1ftg")
+
+[node name="EnemyProgressBarMP" type="ProgressBar" parent="Control/EnemyContainer/EnemyMPBAR"]
+visible = false
+texture_filter = 1
+layout_mode = 2
+offset_left = 9.0
+offset_top = 6.0
+offset_right = 256.0
+offset_bottom = 29.0
+theme = ExtResource("9_0ka8r")
+value = 100.0
+
+[node name="EnemyName" type="RichTextLabel" parent="Control/EnemyContainer/EnemyMPBAR/EnemyProgressBarMP"]
+visible = false
+layout_mode = 2
+offset_left = 76.0
+offset_top = 31.0
+offset_right = 168.0
+offset_bottom = 57.0
+theme = SubResource("Theme_noo5l")
+text = "Diabrete"
+
+[node name="p_devil" parent="Control/EnemyContainer" instance=ExtResource("9_uwlfw")]
+position = Vector2(147, 249)
+scale = Vector2(4, 4)
+
+[node name="MenuButton" type="MenuButton" parent="Control"]
+layout_mode = 0
+offset_left = 448.0
+offset_top = 430.0
+offset_right = 551.0
+offset_bottom = 472.0
+theme = SubResource("Theme_q4wp4")
+text = "Habilidades
+"
+switch_on_hover = true
+
+[node name="attack_btn" type="Button" parent="Control/MenuButton"]
+layout_mode = 0
+offset_left = 180.0
+offset_top = 57.0
+offset_right = 309.0
+offset_bottom = 88.0
+size_flags_horizontal = 0
+size_flags_vertical = 0
+theme = ExtResource("5_4mvkw")
+text = "Soco Carregado"
+flat = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("10_x3vcl")
+volume_db = 6.0
+autoplay = true
+
+[node name="pause_menu" parent="." instance=ExtResource("11_6pndt")]
+process_mode = 4
+
+[connection signal="pressed" from="Control/attack_btn" to="." method="OnAttackButtonPressed"]
+[connection signal="pressed" from="Control/defense_btn" to="." method="OnDefenseButtonPressed"]
+[connection signal="pressed" from="Control/MenuButton/attack_btn" to="." method="OnAttackButtonPressed"]

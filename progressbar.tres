@@ -1,0 +1,9 @@
+[gd_resource type="Theme" load_steps=3 format=3 uid="uid://csuxsj5c7edld"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_h22o0"]
+
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_gx5f5"]
+
+[resource]
+ProgressBar/styles/background = SubResource("StyleBoxEmpty_h22o0")
+ProgressBar/styles/fill = SubResource("StyleBoxEmpty_gx5f5")

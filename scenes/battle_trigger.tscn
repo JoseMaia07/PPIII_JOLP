@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://c3qddumt1j2rq"]
+
+[ext_resource type="Script" path="res://scripts/BattleTrigger.cs" id="1_22sh5"]
+[ext_resource type="PackedScene" uid="uid://dhrkfs37f8tcb" path="res://scenes/battle_scene.tscn" id="2_7odrd"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_yu4vm"]
+
+[node name="BattleTrigger" type="Area2D"]
+script = ExtResource("1_22sh5")
+BattleScene = ExtResource("2_7odrd")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_yu4vm")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

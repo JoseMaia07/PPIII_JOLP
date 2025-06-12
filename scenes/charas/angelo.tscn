@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5ks063bl7oqm"]
+
+[ext_resource type="Script" path="res://scripts/Angelo.cs" id="1_fn5ae"]
+[ext_resource type="Texture2D" uid="uid://cfw1xx75tqp14" path="res://assets/characters/secondarycharas_sprites/Angelo/Magus_Ref4-removebg-preview.png" id="2_7o3fs"]
+
+[node name="Angelo" type="Node2D"]
+script = ExtResource("1_fn5ae")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(15, -63)
+scale = Vector2(0.536, 0.5)
+texture = ExtResource("2_7o3fs")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
